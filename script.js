@@ -30,7 +30,8 @@ function getSide(){
 }
 
 container.addEventListener("mouseover",event=>{
-    event.target.style.backgroundColor="black"
+    const randomColor = Math.floor(Math.random()*16777215).toString(16)
+    event.target.style.backgroundColor="#"+randomColor
     // container.style.backgroundColor="white"
 })
 
