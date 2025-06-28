@@ -1,14 +1,27 @@
 html{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: content-box;
 }
 
 body{
     background-color: palevioletred;
+    display: flex;
+    justify-content: center;
 }
 
 #container{
-    width: 990px;
+    width: 920px;
+    height: 920px;
     background-color: white;
+    border: double pink 12px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 0;
+    /* flex-basis: 920px; */
+}
+
+div{
+    border: solid black 1px;
+    flex-grow: 1;
 }
