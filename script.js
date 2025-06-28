@@ -2,6 +2,7 @@ const container = document.getElementById("container")
 const remove = document.getElementById("clearGrid")
 const resize = document.getElementById("resizeGrid")
 let gridSide = 32
+let opacity = 0
 
 createDivs(gridSide)
 
@@ -13,6 +14,7 @@ function createDivs(side) {
         newDiv.style.width=`${sizeOfDivs}px`
         container.appendChild(newDiv)
     }
+    opacity=0
 }
 
 function removeChildren(){
@@ -31,13 +33,14 @@ function getSide(){
 
 container.addEventListener("mouseover",event=>{
     const randomColor = Math.floor(Math.random()*16777215).toString(16)
+    event.target.style.opacity=opacity
+    opacity+=0.07
     event.target.style.backgroundColor="#"+randomColor
-    // container.style.backgroundColor="white"
 })
 
 container.addEventListener("mouseover",()=>{
-    // event.target.style.backgroundColor="black"
     container.style.backgroundColor="white"
+    container.style.opacity=1
 })
 
 remove.addEventListener("click",removeChildren)
